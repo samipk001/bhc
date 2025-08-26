@@ -19,6 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent } from "../ui/card";
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -38,13 +39,31 @@ export default function ContactSection() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you soon.",
-    });
-    form.reset();
+    try {
+      await emailjs.send(
+        "service_alrhk8i",
+        "template_cv7ka2g",
+        {
+          from_name: values.name,
+          from_email: values.email,
+          message: values.message,
+        },
+        "hbnf92ceDxmCGKG0b"
+      );
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. We'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  }
   }
 
   return (
