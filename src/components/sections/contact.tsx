@@ -64,7 +64,6 @@ export default function ContactSection() {
       });
     }
   }
-  }
 
   return (
     <section id="contact" className="py-20 lg:py-32 bg-secondary">
