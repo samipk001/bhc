@@ -1,0 +1,69 @@
+
+.pill-nav-container {
+  position: relative;
+  z-index: 99;
+}
+
+.pill-nav {
+  --nav-h: 52px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: hsla(var(--card) / 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid hsla(var(--border) / 0.2);
+  border-radius: 9999px;
+  padding: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.pill-nav.is-scrolled {
+    --nav-h: 44px;
+    padding: 4px;
+    background-color: hsla(var(--card) / 0.75);
+}
+
+
+.pill-nav-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+}
+
+.pill-logo {
+  width: var(--nav-h);
+  height: var(--nav-h);
+  border-radius: 50%;
+  background: var(--pill-bg, #fff);
+  color: var(--pill-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.desktop-nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .pill-nav {
+    justify-content: center;
+  }
+  .pill-logo {
+    display: none;
+  }
+  .desktop-nav {
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,38 @@
+
+.scroll-stack-container {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-stack-inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-stack-card {
+  height: 25rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0;
+  border-radius: 30px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  will-change: transform, opacity;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-stack-card:not(:first-child) {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .scroll-stack-card {
+        height: auto;
+        min-height: 25rem;
+        width: 90%;
+    }
+}
