@@ -40,7 +40,7 @@ export default function HeroSection() {
             />
         </div>
         
-        <div className="mt-10 flex gap-4 animate-fade-in-up animation-delay-800">
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-7 px-10 rounded-full">
                 <Link href="#contact">Start Your Project</Link>
             </Button>
