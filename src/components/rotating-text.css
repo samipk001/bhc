@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   white-space: pre-wrap;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .text-rotate-sr-only {
@@ -20,6 +22,7 @@
 
 .text-rotate-word {
   display: inline-flex;
+  max-width: 100%;
 }
 
 .text-rotate-lines {
@@ -30,6 +33,9 @@
 
 .text-rotate-element {
   display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .text-rotate-space {

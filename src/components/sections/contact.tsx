@@ -75,6 +75,10 @@ export default function ContactSection() {
               Have a project in mind? We'd love to hear from you.
             </p>
           </div>
+          <div 
+            className="transform-gpu transition-all duration-700 opacity-0 translate-y-10 scroll-reveal"
+            data-scroll-reveal="true"
+          >
           <Card className="max-w-6xl mx-auto">
             <CardContent className="p-8 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -169,6 +173,7 @@ export default function ContactSection() {
               </div>
             </CardContent>
           </Card>
+        </div>
       </div>
     </section>
   );

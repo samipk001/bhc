@@ -23,16 +23,21 @@ export default function ClientsSection() {
                         We are proud to collaborate with these innovative companies.
                     </p>
                 </div>
-                <LogoLoop 
-                    logos={clientLogos}
-                    speed={80}
-                    direction="left"
-                    logoHeight={48}
-                    gap={60}
-                    pauseOnHover
-                    scaleOnHover
-                    fadeOut
-                />
+                <div 
+                    className="transform-gpu transition-all duration-700 opacity-0 translate-y-10 scroll-reveal"
+                    data-scroll-reveal="true"
+                >
+                    <LogoLoop 
+                        logos={clientLogos}
+                        speed={80}
+                        direction="left"
+                        logoHeight={48}
+                        gap={60}
+                        pauseOnHover
+                        scaleOnHover
+                        fadeOut
+                    />
+                </div>
             </div>
         </section>
     )

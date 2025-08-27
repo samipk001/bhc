@@ -27,15 +27,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/70" />
       </div>
       <div className="relative z-10 p-4 flex flex-col items-center max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg animate-text-blur-in font-headline">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg animate-text-blur-in font-headline px-2">
           Your Vision, Amplified.
         </h1>
         
-        <div className="mt-4 text-lg md:text-xl text-gray-200/90 drop-shadow-lg animate-text-blur-in animation-delay-400 flex items-center gap-2 font-sans">
+        <div className="mt-4 text-base sm:text-lg md:text-xl text-gray-200/90 drop-shadow-lg animate-text-blur-in animation-delay-400 flex flex-col sm:flex-row items-center justify-center gap-2 font-sans px-4">
             <p>We are a creative agency that crafts stunning</p>
             <RotatingText
                 texts={rotatingTexts}
-                mainClassName="bg-primary text-primary-foreground px-3 py-1 rounded-full sm:px-2 sm:py-0.5"
+                mainClassName="bg-primary text-primary-foreground px-3 py-1 rounded-full sm:px-2 sm:py-0.5 mt-1 sm:mt-0"
                 splitBy="words"
             />
         </div>

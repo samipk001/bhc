@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { PT_Sans, Playfair_Display } from 'next/font/google';
+import ScrollRevealProvider from '@/components/scroll-reveal-provider';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -36,10 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn('font-sans antialiased min-h-screen bg-background flex flex-col', ptSans.variable, playfair.variable)}>
-        <Header />
-        <main className="flex-grow pt-28">{children}</main>
-        <Footer />
-        <Toaster />
+        <ScrollRevealProvider>
+          <Header />
+          <main className="flex-grow pt-28">{children}</main>
+          <Footer />
+          <Toaster />
+        </ScrollRevealProvider>
       </body>
     </html>
   );

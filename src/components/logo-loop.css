@@ -58,6 +58,12 @@
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (max-width: 768px) {
+  .logoloop__item img {
+    height: calc(var(--logoloop-logoHeight) * 1.2);
+  }
+}
+
 .logoloop__item img.grayscale {
     filter: grayscale(100%);
     opacity: 0.7;
