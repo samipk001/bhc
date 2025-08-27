@@ -35,13 +35,13 @@ export default function HeroSection() {
             <p>We are a creative agency that crafts stunning</p>
             <RotatingText
                 texts={rotatingTexts}
-                mainClassName="bg-primary text-primary-foreground px-3 py-1 rounded-md"
+                mainClassName="bg-primary text-primary-foreground px-3 py-1 rounded-full sm:px-2 sm:py-0.5"
                 splitBy="words"
             />
         </div>
         
         <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-7 px-10 rounded-full">
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-7 px-10 rounded-full transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
                 <Link href="#contact">Start Your Project</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="font-bold text-lg py-7 px-10 border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full">

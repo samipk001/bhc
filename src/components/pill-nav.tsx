@@ -8,6 +8,7 @@ import "./pill-nav.css";
 import GlassIcons, { type GlassIconItem } from "./glass-icons";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavItem extends Omit<GlassIconItem, 'icon' | 'active'> {
     href: string;
@@ -70,9 +71,9 @@ const PillNav = ({
         aria-label="Primary"
         style={cssVars}
       >
-        <div className="pill-logo">
+        <Link href="#about" className="pill-logo">
             <Image src="https://i.postimg.cc/DyxkVLbn/G.png" alt="BCH Creation Logo" width={52} height={52} />
-        </div>
+        </Link>
 
         <div className="pill-nav-items desktop-nav">
           <GlassIcons items={items.map(item => ({...item, active: getIsActive(item)}))} />
