@@ -61,7 +61,7 @@
     justify-content: center;
   }
   .pill-logo {
-    display: none;
+    /* display: none; */
   }
   .desktop-nav {
     justify-content: space-around;

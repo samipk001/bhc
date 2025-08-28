@@ -17,14 +17,12 @@ export default function HeroSection() {
     <section id="home" className="relative h-[calc(100vh-80px)] w-full flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://picsum.photos/1920/1280"
-          alt="Creative agency workspace abstract background"
-          data-ai-hint="creative workspace"
+          src="https://i.postimg.cc/J4bL2Qk0/bch-logo.jpg" alt="Basnet Creation Hub Logo" className="opacity-10"
+          data-ai-hint="Basnet Creation Hub Logo"
           fill
-          className="object-cover"
-          priority
+          className="object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
       <div className="relative z-10 p-4 flex flex-col items-center max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg animate-text-blur-in font-headline px-2">

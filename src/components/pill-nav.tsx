@@ -72,7 +72,7 @@ const PillNav = ({
         style={cssVars}
       >
         <Link href="#about" className="pill-logo">
-            <Image src="https://i.postimg.cc/DyxkVLbn/G.png" alt="BCH Creation Logo" width={52} height={52} />
+            <Image src="https://i.postimg.cc/J4bL2Qk0/bch-logo.jpg" alt="BCH Creation Logo" width={52} height={52} />
         </Link>
 
         <div className="pill-nav-items desktop-nav">
