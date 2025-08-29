@@ -16,11 +16,11 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-[calc(100vh-80px)] w-full flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://i.postimg.cc/J4bL2Qk0/bch-logo.jpg" alt="Basnet Creation Hub Logo" className="opacity-10"
+        <video
+          src="/2.mp4" className="opacity-10" autoPlay loop muted playsInline
           data-ai-hint="Basnet Creation Hub Logo"
-          fill
-          className="object-cover opacity-10"
+          style={{ width: '100%', height: '100%' }}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
