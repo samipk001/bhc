@@ -89,15 +89,20 @@ const ParticleCard = ({
   const initializeParticles = useCallback(() => {
     if (particlesInitialized.current || !cardRef.current) return;
 
-    const { width, height } = cardRef.current.getBoundingClientRect();
-    memoizedParticles.current = Array.from({ length: particleCount }, () =>
-      createParticleElement(
-        Math.random() * width,
-        Math.random() * height,
-        glowColor
-      )
-    );
-    particlesInitialized.current = true;
+    // Defer particle initialization to reduce initial load impact
+    setTimeout(() => {
+      if (!cardRef.current) return;
+      
+      const { width, height } = cardRef.current.getBoundingClientRect();
+      memoizedParticles.current = Array.from({ length: particleCount }, () =>
+        createParticleElement(
+          Math.random() * width,
+          Math.random() * height,
+          glowColor
+        )
+      );
+      particlesInitialized.current = true;
+    }, 200);
   }, [particleCount, glowColor]);
 
   const clearAllParticles = useCallback(() => {

@@ -37,6 +37,8 @@ export default function HeroSection() {
             className="w-full h-full object-cover opacity-30"
             poster="/bch logo.jpg"
             fetchPriority="high"
+            loading="eager"
+            decoding="async"
           >
             <source src="/2.mp4" type="video/mp4" />
           </video>

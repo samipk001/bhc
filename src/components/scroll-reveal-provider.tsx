@@ -9,8 +9,13 @@ interface ScrollRevealProviderProps {
 
 export default function ScrollRevealProvider({ children }: ScrollRevealProviderProps) {
   useEffect(() => {
-    const cleanup = initScrollReveal();
-    return cleanup;
+    // Delay scroll reveal initialization to avoid blocking initial render
+    const timer = setTimeout(() => {
+      const cleanup = initScrollReveal();
+      return cleanup;
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return <>{children}</>;

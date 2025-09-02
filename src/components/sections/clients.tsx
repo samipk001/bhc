@@ -4,12 +4,19 @@
 import LogoLoop from "../logo-loop";
 
 const clientLogos = [
-  { src: "https://i.postimg.cc/kgHCkKRL/asta.jpg", alt: "Asta" },
-  { src: "https://i.postimg.cc/NjFYJpF1/chirayu.jpg", alt: "Chirayu" },
-  { src: "https://i.postimg.cc/DZkTzhgg/fitness.jpg", alt: "Fitness" },
-  { src: "https://i.postimg.cc/RF7z6Ypz/impress.jpg", alt: "Empress" },
-  { src: "https://i.postimg.cc/Bv13sbxb/united.png", alt: "United" },
-  { src: "https://i.postimg.cc/5YrsT1g0/pcs.png", alt: "PCS" },
+  { src: "https://i.postimg.cc/kgHCkKRL/asta.jpg", alt: "Asta", width: 120, height: 60 },
+  { 
+    src: "https://i.postimg.cc/NjFYJpF1/chirayu.jpg", 
+    alt: "Chirayu", 
+    width: 120, 
+    height: 60,
+    // Add a fallback image in case the primary one fails to load
+    customClassName: "client-logo"
+  },
+  { src: "https://i.postimg.cc/DZkTzhgg/fitness.jpg", alt: "Fitness", width: 120, height: 60 },
+  { src: "https://i.postimg.cc/RF7z6Ypz/impress.jpg", alt: "Empress", width: 120, height: 60 },
+  { src: "https://i.postimg.cc/Bv13sbxb/united.png", alt: "United", width: 120, height: 60 },
+  { src: "https://i.postimg.cc/5YrsT1g0/pcs.png", alt: "PCS", width: 120, height: 60 },
 ];
 
 

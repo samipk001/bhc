@@ -3,6 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Loading state styles */
+html.loading * {
+  transition: none !important;
+}
+
+html.loading .scroll-reveal {
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+
+/* Fade in animation for page content */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+html:not(.loading) body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

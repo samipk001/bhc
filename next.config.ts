@@ -15,7 +15,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimisticClientCache: true,
+    scrollRestoration: true,
   },
+  // Optimize performance
+  // Note: swcMinify is now enabled by default in Next.js 13+
+  productionBrowserSourceMaps: false,
   images: {
     remotePatterns: [
       {

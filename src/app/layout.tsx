@@ -7,6 +7,8 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { PT_Sans, Playfair_Display } from 'next/font/google';
 import ScrollRevealProvider from '@/components/scroll-reveal-provider';
+import LoadingIndicator from '@/components/loading-indicator';
+import LoadingClassHandler from '@/components/loading-class-handler';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -38,8 +40,11 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <link rel="preload" href="/bch logo.jpg" as="image" />
+        <link rel="preload" href="/2.mp4" as="video" type="video/mp4" fetchPriority="high" />
       </head>
       <body className={cn('font-sans antialiased min-h-screen bg-background flex flex-col', ptSans.variable, playfair.variable)}>
+        <LoadingClassHandler />
+        <LoadingIndicator />
         <ScrollRevealProvider>
           <Header />
           <main className="flex-grow pt-28">{children}</main>

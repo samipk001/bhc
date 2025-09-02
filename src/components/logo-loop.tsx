@@ -300,6 +300,12 @@ export const LogoLoop = memo(
           decoding="async"
           draggable={false}
           className={item.customClassName}
+          onError={(e) => {
+            // Prevent the browser from showing the broken image icon
+            const imgElement = e.currentTarget as HTMLImageElement;
+            imgElement.style.display = 'none';
+            console.warn(`Failed to load image: ${item.src}`);
+          }}
         />
       );
       
