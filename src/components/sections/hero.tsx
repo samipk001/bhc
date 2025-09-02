@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RotatingText from '../rotating-text';
 import { useIsMobile } from '@/hooks/use-mobile';
+import VideoLoader from '../video-loader';
 
 export default function HeroSection() {
   const rotatingTexts = [
@@ -19,33 +20,35 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-[calc(100vh-80px)] w-full flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
+        {/* Video background with lower z-index */}
         {isMobile ? (
-          <div className="w-full h-full bg-black">
-            <Image 
-              src="/bch logo.jpg" 
-              alt="BCH Creation Hub" 
-              fill 
-              priority
-              className="object-cover opacity-30"
+          <Image
+            src="/bch logo.jpg"
+            alt="BCH Logo"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-30"
+          />
+        ) : (
+          <div className="w-full h-full bg-black absolute inset-0 z-0">
+            <VideoLoader
+              src="/2.mp4"
+              mobileSrc="/videos/mobile/2.mp4"
+              tabletSrc="/videos/tablet/2.mp4"
+              desktopSrc="/videos/desktop/2.mp4"
+              poster="/bch logo.jpg"
+              className="w-full h-full object-cover opacity-30"
+              priority={true}
+              disableOnMobile={false}
+              quality="medium"
             />
           </div>
-        ) : (
-          <video
-            autoPlay loop muted playsInline
-            preload="auto"
-            data-ai-hint="Basnet Creation Hub Logo"
-            className="w-full h-full object-cover opacity-30"
-            poster="/bch logo.jpg"
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          >
-            <source src="/2.mp4" type="video/mp4" />
-          </video>
         )}
-        <div className="absolute inset-0 bg-black/10" />
+
+        {/* Logo overlay removed as requested */}
+        <div className="absolute inset-0 z-20 bg-black/10" />
       </div>
-      <div className="relative z-10 p-4 flex flex-col items-center max-w-4xl mx-auto">
+      <div className="relative z-30 p-4 flex flex-col items-center max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg animate-text-blur-in font-headline px-2">
           Your Vision, Amplified.
         </h1>

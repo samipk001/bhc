@@ -39,8 +39,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="preload" href="/bch logo.jpg" as="image" />
-        <link rel="preload" href="/2.mp4" as="video" type="video/mp4" fetchPriority="high" />
+        {/* Preconnect to origin for faster resource loading */}
+        <link rel="preconnect" href="/" />
+        <link rel="dns-prefetch" href="/" />
+        
+        {/* Preload critical assets */}
+        <link rel="preload" href="/bch logo.jpg" as="image" fetchPriority="high" />
+        
+        {/* Only preload video on desktop devices */}
+        <link 
+          rel="preload" 
+          href="/2.mp4" 
+          as="video" 
+          type="video/mp4" 
+          fetchPriority="high" 
+          media="(min-width: 768px)" 
+        />
       </head>
       <body className={cn('font-sans antialiased min-h-screen bg-background flex flex-col', ptSans.variable, playfair.variable)}>
         <LoadingClassHandler />
