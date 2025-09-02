@@ -31,16 +31,14 @@ export default function HeroSection() {
           />
         ) : (
           <div className="w-full h-full bg-black absolute inset-0 z-0">
-            <VideoLoader
+            <video
               src="/2.mp4"
-              mobileSrc="/videos/mobile/2.mp4"
-              tabletSrc="/videos/tablet/2.mp4"
-              desktopSrc="/videos/desktop/2.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               poster="/bch logo.jpg"
               className="w-full h-full object-cover opacity-30"
-              priority={true}
-              disableOnMobile={false}
-              quality="medium"
             />
           </div>
         )}
