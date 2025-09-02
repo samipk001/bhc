@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import RotatingText from '../rotating-text';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export default function HeroSection() {
   const rotatingTexts = [
@@ -12,17 +13,35 @@ export default function HeroSection() {
     "cinematic videos.",
     "pixel-perfect websites.",
   ];
+  
+  const isMobile = useIsMobile();
 
   return (
     <section id="home" className="relative h-[calc(100vh-80px)] w-full flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <video
-          src="/2.mp4" className="opacity-10" autoPlay loop muted playsInline
-          data-ai-hint="Basnet Creation Hub Logo"
-          style={{ width: '100%', height: '100%' }}
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/20" />
+        {isMobile ? (
+          <div className="w-full h-full bg-black">
+            <Image 
+              src="/bch logo.jpg" 
+              alt="BCH Creation Hub" 
+              fill 
+              priority
+              className="object-cover opacity-30"
+            />
+          </div>
+        ) : (
+          <video
+            autoPlay loop muted playsInline
+            preload="auto"
+            data-ai-hint="Basnet Creation Hub Logo"
+            className="w-full h-full object-cover opacity-30"
+            poster="/bch logo.jpg"
+            fetchPriority="high"
+          >
+            <source src="/2.mp4" type="video/mp4" />
+          </video>
+        )}
+        <div className="absolute inset-0 bg-black/10" />
       </div>
       <div className="relative z-10 p-4 flex flex-col items-center max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg animate-text-blur-in font-headline px-2">

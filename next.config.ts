@@ -9,6 +9,13 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
+  experimental: {
+    optimizeCss: true,
+    optimisticClientCache: true,
+  },
   images: {
     remotePatterns: [
       {

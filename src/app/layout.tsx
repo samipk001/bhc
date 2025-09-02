@@ -36,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="preload" href="/bch logo.jpg" as="image" />
+      </head>
       <body className={cn('font-sans antialiased min-h-screen bg-background flex flex-col', ptSans.variable, playfair.variable)}>
         <ScrollRevealProvider>
           <Header />
